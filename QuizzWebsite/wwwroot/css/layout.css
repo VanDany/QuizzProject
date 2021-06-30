@@ -1,0 +1,25 @@
+﻿body {
+}
+.bg-color {
+    background-color: darkslateblue;
+}
+.navbar-brand{
+    color:white!important;
+    font-size:30px!important;
+}
+.nav-item{
+    color:white!important;
+}
+
+#qsLogoutBtn {
+    color: white;
+}
+
+#qsLoginBtn{
+    color:white;
+}
+
+footer {
+    background-color: darkslateblue;
+}
+

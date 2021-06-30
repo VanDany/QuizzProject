@@ -1,0 +1,86 @@
+﻿@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@{
+    ViewData["Title"] = "Column Chart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<div class="text-center">
+    <button id="ColumnChart" class="btn btn-danger">Column Chart</button>
+</div>
+
+
+<div id="chart_ColumnId"></div>
+
+<script>
+    google.charts.load('current', {
+        packages: ['corechart', 'bar']
+    });
+    google.charts.setOnLoadCallback(LoadData);
+
+    $(document).ready(function () {
+        $("#ColumnChart").on("click", function () { LoadColumnChart(); });
+    });
+
+    function LoadLineChart() {
+        //LineData();
+        alert('coucou linechart');
+    }
+
+    function LoadPieChart() {
+        PieData();
+    }
+
+    function LoadColumnChart() {
+        LoadData();
+    }
+
+    function LoadData() {
+        $.ajax({
+            url: 'ColumnChart',
+            dataType: 'json',
+            type: 'GET',
+            error: function (xhr, status, error) {
+                var err = eval("(" + xhr.responseText + ")");
+                toastr.error(err.message);
+            },
+            success: function (data) {
+                CategoriesChart(data);
+                return false;
+            }
+        });
+        return false;
+    }
+
+    function CategoriesChart(data) {
+        //PAS HARDCODÉ !!!!!!!!!
+        var dataArray = [
+            ['Difficulté', 'Géographie', 'Sciences et Nature', 'Divertissement', 'Histoire', 'Art et Littérature', 'Sports']
+        ]
+            ;
+        $.each(data, function (i, item) {
+            dataArray.push([item.difficulty, item.geographie, item.sciencesEtNature, item.divertissement, item.histoire, item.artEtLitterature, item.sports]);
+        });
+        var data = google.visualization.arrayToDataTable(dataArray);
+        var options = {
+            title: 'Stats des catégories selon la difficulté',
+            chartArea: {
+                width: '50%',
+                height:'50%'
+            },
+            colors: ['#b0120a', '#7b1fa2', '#ffab91', '#d95f02'],
+            hAxis: {
+                title: 'Difficulté',
+                minValue: 0
+            },
+            vAxis: {
+                title: 'Nombre de quizz'
+            }
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_ColumnId'));
+        chart.draw(data, options);
+        return false;
+    }
+</script>

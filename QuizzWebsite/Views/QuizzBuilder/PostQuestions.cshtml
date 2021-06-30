@@ -1,0 +1,229 @@
+﻿@model List<mQuestion>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<link rel="stylesheet" href="~/css/postQuestions.css" />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="PostQuestions">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <p id="Title1" class="questionTitre">Question n° 1</p>
+            <div id="QuizzID1" class="form-group">
+                <input type="hidden" asp-for="@Model[0].QuizzID" value="@ViewBag.Message" />
+            </div>
+            <div id=" QuestionID1" class="form-group">
+                <input type="hidden" placeholder="Votre question" asp-for="@Model[0].QuestionID" value="1" />
+            </div>
+            <div id="Question1" class="form-group">
+                <input placeholder="Votre question" asp-for="@Model[0].Question" />
+            </div>
+            <div>
+                <input asp-for="@Model[0].Answer" type="radio" id="Vrai1" value="true">
+                <label for="Vrai1">VRAI</label>
+            </div>
+
+            <div>
+                <input asp-for="@Model[0].Answer" type="radio" id="Faux1" value="false">
+                <label for="Faux1">FAUX</label>
+            </div>
+        <p id="Dashes1">------------------------------------</p>
+
+            <p id="Title2" style="display:none" class="questionTitre">Question n° 2</p>
+            <div id="QuizzID2" class="form-group">
+                <input type="hidden" asp-for="@Model[1].QuizzID" value="@ViewBag.Message" />
+            </div>
+            <div class="form-group">
+                <input id="QuestionID2" type="hidden" placeholder="Votre question" asp-for="@Model[1].QuestionID" value="2" />
+            </div>
+            <div class="form-group">
+                <input id="Question2" style="display:none" placeholder="Votre question" asp-for="@Model[1].Question" />
+            </div>
+            <div>
+                <input style="display:none" asp-for="@Model[1].Answer" type="radio" id="Vrai2" value="true">
+                <label id="VraiLabel2" style="display:none" for="Vrai2">VRAI</label>
+            </div>
+
+            <div>
+                <input style="display:none" asp-for="@Model[1].Answer" type="radio" id="Faux2" value="false">
+                <label id ="FauxLabel2" style="display:none" for="Faux2">FAUX</label>
+            </div>
+            <p id="Dashes2" style="display:none">------------------------------------</p>
+
+            <p id="Title3" style="display:none" class="questionTitre">Question n° 3</p>
+            <div id="QuizzID3" class="form-group">
+                <input type="hidden" asp-for="@Model[2].QuizzID" value="@ViewBag.Message" />
+            </div>
+            <div id=" QuestionID3" class="form-group">
+                <input type="hidden" placeholder="Votre question" asp-for="@Model[2].QuestionID" value="3" />
+            </div>
+            <div class="form-group">
+                <input id="Question3" style="display:none" placeholder="Votre question" asp-for="@Model[2].Question" />
+            </div>
+            <div style="float:left">
+                <input style="display:none" asp-for="@Model[2].Answer" type="radio" id="Vrai3" value="true">
+                <label id="VraiLabel3" style="display:none" for="Vrai3">VRAI</label>
+            </div>
+
+            <div>
+                <input style="display:none" asp-for="@Model[2].Answer" type="radio" id="Faux3" value="false">
+                <label id="FauxLabel3" style="display:none" for="Faux3">FAUX</label>
+            </div>
+            <p id="Dashes3" style="display:none">------------------------------------</p>
+
+            <p id="Title4" style="display:none" class="questionTitre">Question n° 4</p>
+            <div id="QuizzID4" class="form-group">
+                <input type="hidden" asp-for="@Model[3].QuizzID" value="@ViewBag.Message" />
+            </div>
+            <div id=" QuestionID4" class="form-group">
+                <input type="hidden" placeholder="Votre question" asp-for="@Model[3].QuestionID" value="4" />
+            </div>
+            <div class="form-group">
+                <input id="Question4" style="display:none" placeholder="Votre question" asp-for="@Model[3].Question" />
+            </div>
+            <div>
+                <input style="display:none" asp-for="@Model[3].Answer" type="radio" id="Vrai4" value="true">
+                <label id="VraiLabel4" style="display:none">VRAI</label>
+            </div>
+
+            <div>
+                <input style="display:none" asp-for="@Model[3].Answer" type="radio" id="Faux4" value="false">
+                <label id="FauxLabel4" style="display:none">FAUX</label>
+            </div>
+            <p id="Dashes4" style="display:none">------------------------------------</p>
+
+            <p id="Title5" style="display:none" class="questionTitre">Question n° 5</p>
+            <div id="QuizzID5" class="form-group">
+                <input type="hidden" asp-for="@Model[4].QuizzID" value="@ViewBag.Message" />
+            </div>
+            <div id=" QuestionID5" class="form-group">
+                <input type="hidden" placeholder="Votre question" asp-for="@Model[4].QuestionID" value="5" />
+            </div>
+            <div class="form-group">
+                <input id="Question5" style="display:none" placeholder="Votre question" asp-for="@Model[4].Question" />
+            </div>
+            <div>
+                <input style="display:none" asp-for="@Model[4].Answer" type="radio" id="Vrai5" value="true">
+                <label id="VraiLabel5" style="display:none">VRAI</label>
+            </div>
+
+            <div>
+                <input style="display:none" asp-for="@Model[4].Answer" type="radio" id="Faux5" value="false">
+                <label id="FauxLabel5" style="display:none">FAUX</label>
+            </div>
+            <p id="Dashes5" style="display:none">------------------------------------</p>
+
+            <p id="Title6" style="display:none" class="questionTitre">Question n° 6</p>
+            <div id="QuizzID6" class="form-group">
+                <input type="hidden" asp-for="@Model[5].QuizzID" value="@ViewBag.Message" />
+            </div>
+            <div id=" QuestionID6" class="form-group">
+                <input type="hidden" placeholder="Votre question" asp-for="@Model[5].QuestionID" value="6" />
+            </div>
+            <div class="form-group">
+                <input id="Question6" style="display:none" placeholder="Votre question" asp-for="@Model[5].Question" />
+            </div>
+            <div>
+                <input style="display:none" asp-for="@Model[5].Answer" type="radio" id="Vrai6" value="true">
+                <label id="VraiLabel6" style="display:none" for="Vrai6">VRAI</label>
+            </div>
+
+            <div>
+                <input style="display:none" asp-for="@Model[5].Answer" type="radio" id="Faux6" value="false">
+                <label id="FauxLabel6" style="display:none" for="Faux6">FAUX</label>
+            </div>
+            <p id="Dashes6" style="display:none">------------------------------------</p>
+
+            <p id="Title7" style="display:none" class="questionTitre">Question n° 7</p>
+            <div id="QuizzID7" class="form-group">
+                <input type="hidden" asp-for="@Model[6].QuizzID" value="@ViewBag.Message" />
+            </div>
+            <div id=" QuestionID7" class="form-group">
+                <input type="hidden" placeholder="Votre question" asp-for="@Model[6].QuestionID" value="7" />
+            </div>
+            <div class="form-group">
+                <input id="Question7" style="display:none" placeholder="Votre question" asp-for="@Model[6].Question" />
+            </div>
+            <div>
+                <input style="display:none" asp-for="@Model[6].Answer" type="radio" id="Vrai7" value="true">
+                <label id="VraiLabel7" style="display:none">VRAI</label>
+            </div>
+
+            <div>
+                <input style="display:none" asp-for="@Model[6].Answer" type="radio" id="Faux7" value="false">
+                <label id="FauxLabel7" style="display:none">FAUX</label>
+            </div>
+            <p id="Dashes7" style="display:none">------------------------------------</p>
+
+            <p id="Title8" style="display:none" class="questionTitre">Question n° 8</p>
+            <div id="QuizzID8" class="form-group">
+                <input type="hidden" asp-for="@Model[7].QuizzID" value="@ViewBag.Message" />
+            </div>
+            <div id=" QuestionID8" class="form-group">
+                <input type="hidden" placeholder="Votre question" asp-for="@Model[7].QuestionID" value="8" />
+            </div>
+            <div class="form-group">
+                <input id="Question8" style="display:none" placeholder="Votre question" asp-for="@Model[7].Question" />
+            </div>
+            <div>
+                <input style="display:none" asp-for="@Model[7].Answer" type="radio" id="Vrai8" value="true">
+                <label id="VraiLabel8" style="display:none">VRAI</label>
+            </div>
+
+            <div>
+                <input style="display:none" asp-for="@Model[7].Answer" type="radio" id="Faux8" value="false">
+                <label id="FauxLabel8" style="display:none">FAUX</label>
+            </div>
+            <p id="Dashes8" style="display:none">------------------------------------</p>
+
+            <p id="Title9" style="display:none" class="questionTitre">Question n° 9</p>
+            <div id="QuizzID9" class="form-group">
+                <input type="hidden" asp-for="@Model[8].QuizzID" value="@ViewBag.Message" />
+            </div>
+            <div id=" QuestionID9" class="form-group">
+                <input type="hidden" placeholder="Votre question" asp-for="@Model[8].QuestionID" value="9" />
+            </div>
+            <div class="form-group">
+                <input id="Question9" style="display:none" placeholder="Votre question" asp-for="@Model[8].Question" />
+            </div>
+            <div>
+                <input style="display:none" asp-for="@Model[8].Answer" type="radio" id="Vrai9" value="true">
+                <label id="VraiLabel9" for="Vrai9" style="display:none">VRAI</label>
+            </div>
+
+            <div>
+                <input style="display:none" asp-for="@Model[8].Answer" type="radio" id="Faux9" value="false">
+                <label id="FauxLabel9" for="Faux9" style="display:none">FAUX</label>
+            </div>
+            <p id="Dashes9" style="display:none">------------------------------------</p>
+
+            <p id="Title10" style="display:none" class="questionTitre">Question n° 10</p>
+            <div id="QuizzID10" class="form-group">
+                <input type="hidden" asp-for="@Model[9].QuizzID" value="@ViewBag.Message" />
+            </div>
+            <div id=" QuestionID10" class="form-group">
+                <input type="hidden" placeholder="Votre question" asp-for="@Model[9].QuestionID" value="10" />
+            </div>
+            <div class="form-group">
+                <input id="Question10" style="display:none" placeholder="Votre question" asp-for="@Model[9].Question" />
+            </div>
+            <div>
+                <input style="display:none" asp-for="@Model[9].Answer" type="radio" id="Vrai10" value="true">
+                <label id="VraiLabel10" for="Vrai10" style="display:none">VRAI</label>
+            </div>
+
+            <div>
+                <input style="display:none" asp-for="@Model[9].Answer" type="radio" id="Faux10" value="false">
+                <label id="FauxLabel10" for="Faux10" style="display:none">FAUX</label>
+            </div>
+            <p id="Dashes10" style="display:none">------------------------------------</p>
+
+            <input id="addQuestion" type="button" value="Ajouter une question" onclick="addQuestionLine()" />
+
+            <div class="form-group">
+                <input type="submit" value="Valider les questions" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="~/js/PostQuestion.js"></script>

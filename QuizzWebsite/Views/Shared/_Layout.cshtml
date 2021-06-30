@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - VRAI OU FAUX</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/layout.css" />
+    <script src="~/js/jquery-3.5.1.min.js"></script>
+    <script src="~/js/toastr.min.js"></script>
+    <link href="~/css/toastr.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-color border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <div class="canvasContainer text-center">
+                    <canvas id="artifactCanvas"></canvas>
+                </div>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">VRAI OU FAUX</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item text-white">
+                            <a class="nav-link text-white" asp-area="" asp-controller="QuizzBuilder" asp-action="PostQuizz">Créer un nouveau quizz</a>
+                        </li>
+                        <li class="nav-item text-white">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Users" asp-action="CreateUserPage">Créer un user</a>
+                        </li>
+                        <li class="nav-item text-white">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Users" asp-action="UsersList">Liste des Users</a>
+                        </li>
+                        <li class="nav-item text-white">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="listeTEST">Liste des quizz</a>
+                        </li>
+                        <li class="nav-item text-white">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Chart" asp-action="ChartOverview">Stats</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="nav navbar-nav navbar-right text-white">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li><a style="padding-right:20px;" asp-controller="Account" asp-action="Profile">Hello @User.Identity.Name !</a></li>
+
+                            <li><a id="myProfile" style="padding-right:20px;" asp-controller="Account" asp-action="Profile">Mon profil</a></li>
+
+                            <li><a id="qsLogoutBtn" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                        }
+                        else
+                        {
+                            <li><a id="qsLoginBtn" asp-controller="Account" asp-action="Login">Login</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <div class="container-fluid">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - QuizzWebsite
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.js"></script>
+<script src="~/js/AnimatedLogo.js"></script>
+</html>

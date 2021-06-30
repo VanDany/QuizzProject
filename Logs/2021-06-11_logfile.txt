@@ -1,0 +1,16 @@
+2021-06-11 10:45:38.4084 INFO Fetching all quizz from db.
+2021-06-11 10:45:39.0938 INFO Returning 3 quizz.
+2021-06-11 10:45:46.4077 INFO Fetching all quizz from db.
+2021-06-11 10:45:46.4286 INFO Returning 3 quizz.
+2021-06-11 10:50:41.1102 INFO Fetching all quizz from db.
+2021-06-11 10:50:41.7733 INFO Returning 3 quizz.
+2021-06-11 10:52:16.9935 INFO Fetching all quizz from db.
+2021-06-11 10:52:17.6596 INFO Returning 3 quizz.
+2021-06-11 10:52:28.9025 INFO Fetching all quizz from db.
+2021-06-11 10:52:28.9245 INFO Returning 3 quizz.
+2021-06-11 11:22:56.2832 INFO Fetching all quizz from db.
+2021-06-11 11:22:56.9743 INFO Returning 3 quizz.
+2021-06-11 11:23:04.7822 INFO Fetching all quizz from db.
+2021-06-11 11:23:04.8031 INFO Returning 3 quizz.
+2021-06-11 14:12:21.2824 INFO Fetching all quizz from db.
+2021-06-11 14:12:21.9888 INFO Returning 3 quizz.

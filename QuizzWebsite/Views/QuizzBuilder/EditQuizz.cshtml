@@ -1,0 +1,56 @@
+﻿@model mQuizz
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Create a quizz";
+}
+
+@ViewBag.QuizzID
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditQuizz">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="QuizzID" class="control-label"></label>
+                <input id="quizz" readonly asp-for="QuizzID" class="form-control" />
+                <span asp-validation-for="QuizzID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDate" class="control-label"></label>
+                <input id="Aujourdhui" readonly asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Difficulty" class="control-label"></label>
+                <select asp-for="Difficulty">
+                    <option value="Facile">Facile</option>
+                    <option value="Moyen">Moyen</option>
+                    <option value="Difficile">Difficile</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Valider infos Quizz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    var now = new Date();
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+    document.getElementById("Aujourdhui").value = now.toISOString().slice(0, -1);
+</script>

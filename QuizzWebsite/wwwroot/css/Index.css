@@ -1,0 +1,27 @@
+﻿body {
+}
+.elements{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.canvasContainer{
+}
+.lastCreations{
+    align-self:center;
+    max-width:500px;
+}
+.Title{
+    display:flex;
+    justify-content:center;
+}
+.date{
+    font-style:italic;   
+}
+.category{
+    font-weight:bold;
+    color:darkgoldenrod;
+}
+.difficulty{
+    color:darkred;
+}

@@ -1,0 +1,40 @@
+﻿@model mQuestion
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link rel="stylesheet" href="~/css/question.css" />
+<script src="~/js/question.js"></script>
+<div class="box">
+    <div class="Title">
+        <h1>Question</h1>
+    </div>
+    <div class="question">
+        <p>
+            @Html.DisplayFor(model => model.Question)
+
+        </p>
+    </div>
+    @{ 
+        var a = Model.QuestionID + 1;
+
+        //anwser TRUE OR FALSE
+        var b = 0;
+        var c = 0;
+        if (Model.Answer == true)
+        {
+            b = 1;
+            c = 0;
+        }
+        else
+        {
+            b = 0;
+            c = 1;
+        }
+        }
+    <div class="truefalse">
+        <a class="true" asp-controller="Home" asp-action="Question" asp-route-QuizzID=@Model.QuizzID asp-route-QuestionID=@a asp-route-answer=@b> VRAI </a>
+        <a class="false" asp-controller="Home" asp-action="Question" asp-route-QuizzID=@Model.QuizzID asp-route-QuestionID=@a asp-route-answer =@c> FAUX</a>
+    </div>
+</div>

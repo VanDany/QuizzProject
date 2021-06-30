@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<link rel="stylesheet" href="~/css/userslist.css" />
+@model QuizzWebsite.Models.mUserDetails
+@ViewBag.RoleToChange
+@if (ViewBag.RoleToChange == "Owner")
+            {
+                <h1> CECI EST UN OWNER</h1>
+            } 
+<table>
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.role)
+        </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var item in Model.userList)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.role)
+            </td>
+
+            <td>
+                <a id="button-delete" asp-controller="Users" asp-action="DeleteUser" asp-route-userID=@item.user_id> Delete </a>
+            </td>
+            <td>
+                <form asp-controller="Users" asp-action="AssignRole">
+                    <label asp-for="role" class="control-label">></label>
+                    <select asp-for="role">
+                        <option asp-for="role" value="Owner">Owner</option>
+                        <option asp-for="role" value="Admin">Admin</option>
+                        <option asp-for="role" value="User">User</option>
+                        <option asp-for="role" value="Agent">Agent</option>
+                    </select>
+                    <input style="display: none" asp-for="user_id" value = "@item.user_id" class="form-control" />
+                    <!--Ajouter le USER ID dans le model-->
+                    <div class="form-group">
+                        <input id="button-test" type="submit" value="Créer le rôle" class="btn btn-primary" />
+                    </div>
+                </form>
+            </td>
+        </tr>
+
+    }
+    </tbody>
+</table>
+

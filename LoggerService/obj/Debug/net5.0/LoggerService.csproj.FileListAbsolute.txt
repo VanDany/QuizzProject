@@ -1,0 +1,12 @@
+C:\Users\Dany\source\repos\Quizz\LoggerService\bin\Debug\net5.0\LoggerService.deps.json
+C:\Users\Dany\source\repos\Quizz\LoggerService\bin\Debug\net5.0\LoggerService.dll
+C:\Users\Dany\source\repos\Quizz\LoggerService\bin\Debug\net5.0\ref\LoggerService.dll
+C:\Users\Dany\source\repos\Quizz\LoggerService\bin\Debug\net5.0\LoggerService.pdb
+C:\Users\Dany\source\repos\Quizz\LoggerService\obj\Debug\net5.0\LoggerService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dany\source\repos\Quizz\LoggerService\obj\Debug\net5.0\LoggerService.AssemblyInfoInputs.cache
+C:\Users\Dany\source\repos\Quizz\LoggerService\obj\Debug\net5.0\LoggerService.AssemblyInfo.cs
+C:\Users\Dany\source\repos\Quizz\LoggerService\obj\Debug\net5.0\LoggerService.csproj.CoreCompileInputs.cache
+C:\Users\Dany\source\repos\Quizz\LoggerService\obj\Debug\net5.0\LoggerService.dll
+C:\Users\Dany\source\repos\Quizz\LoggerService\obj\Debug\net5.0\ref\LoggerService.dll
+C:\Users\Dany\source\repos\Quizz\LoggerService\obj\Debug\net5.0\LoggerService.pdb
+C:\Users\Dany\source\repos\Quizz\LoggerService\obj\Debug\net5.0\LoggerService.csproj.AssemblyReference.cache

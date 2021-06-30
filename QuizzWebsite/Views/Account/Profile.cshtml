@@ -1,0 +1,28 @@
+﻿@model QuizzWebsite.Models.mUserProfile
+@{
+    ViewData["Title"] = "User Profile";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <h2>@ViewData["Title"].</h2>
+
+            <div class="col-md-2">
+                <img src="@Model.ProfileImage" alt="" class="img-rounded img-responsive" />
+            </div>
+            <div class="col-md-4">
+                <h3>@Model.Name</h3>
+                <p>
+                    <i class="glyphicon glyphicon-envelope"></i> @Model.EmailAddress
+                </p>
+            </div>
+            <div>
+                <h3>Nombre de bonnes réponses : @ViewBag.GoodAnswers</h3>
+                <h3>Nombre de mauvaises réponses : @ViewBag.WrongAnswers</h3>
+                <h3>Nombre de quizz joués : @ViewBag.QuizzTotal</h3>
+                <h2>Votre pourcentage de bonnes réponses est donc de @ViewBag.Ratio %</h2>
+            </div>
+        </div>
+    </div>
+</div>

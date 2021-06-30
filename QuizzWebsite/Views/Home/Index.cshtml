@@ -1,0 +1,46 @@
+﻿@model IEnumerable<QuizzWebsite.Models.mQuizz>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/Index.css" />
+<div class="elements">
+    <div class="Title">
+        <h1>Bienvenue sur VRAI ou FAUX </h1>
+    </div>
+
+    <div class="lastCreations">
+        <h2>Les derniers quizz créés</h2>
+        <ul class="new-quizz">
+            @foreach (var item in Model)
+            {
+            <a asp-action="Question" asp-route-quizzID="@item.QuizzID" asp-route-questionID= "1" asp-route-questionsCount ="@item.QuestionsCount">
+                <li>
+
+                    <span class="date">
+                        @Html.DisplayFor(modelItem => item.CreationDate)
+                    </span>
+                    <span class="category">
+                        @Html.DisplayFor(model => item.Category)
+                    </span>
+                    <span class="title">
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </span>
+                    <span class="difficulty">
+                        @Html.DisplayFor(model => item.Difficulty)
+                    </span>
+
+                </li>
+            </a>
+            }
+        </ul>
+    </div>
+</div>
+<div class="canvasContainer text-center">
+    <canvas id="artifactCanvas"></canvas>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.js"></script>
+<script src="~/js/AnimatedLogo.js"></script>
+
+

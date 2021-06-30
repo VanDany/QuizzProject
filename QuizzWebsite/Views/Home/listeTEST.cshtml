@@ -1,0 +1,69 @@
+﻿@model IEnumerable<QuizzWebsite.Models.mQuizz>
+
+@{
+    ViewData["Title"] = "listeTEST";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Liste des quizz</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QuizzID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Difficulty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AverageScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuestionsCount)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuizzID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Difficulty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AverageScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionsCount)
+            </td>
+            <td>
+                <a asp-controller="QuizzBuilder" asp-action="EditQuizz" asp-route-QuizzID=@item.QuizzID> Edit </a>|
+                <a asp-controller="QuizzBuilder" asp-action="DeleteQuizz" asp-route-QuizzID=@item.QuizzID > Delete </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
