@@ -6,5 +6,5 @@
 --> Fluent validation<br/>
 --> Logging system with nLog<br/>
 --> Using external API with AJAX call<br/>
---> Using Toastr
+--> Using Toastr</br>
 --> Animated logo with Three.js
