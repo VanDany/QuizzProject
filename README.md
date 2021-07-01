@@ -1,5 +1,5 @@
 # QuizzWebsite
-
+--> .NET 5 project
 --> Quizz website and API with authentication / authorization managed by Auth0<br/>
 --> Users roles and permissions
 --> Exceptions managed by middleware<br/>
